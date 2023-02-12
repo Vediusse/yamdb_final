@@ -49,7 +49,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: vedius/infra_sp2:latest
+          tags: vedius/infra_sp2:v0.0.0.1
 
   deploy:
     runs-on: ubuntu-latest
