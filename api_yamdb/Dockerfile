@@ -10,6 +10,8 @@ COPY ./ .
 
 RUN pip install psycopg2-binary
 
+RUN pip freeze > requirements.txt
+
 CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]
 
 
