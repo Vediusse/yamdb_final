@@ -31,7 +31,7 @@ cd api_yamdb
 ```
 
 ### **Шаблон наполнения env-файла:**:
-1) Шаблон наполнения .env должен быть расположен по пути infra/.env 
+1) Шаблон наполнения .env должен быть расположен по пути infra/.env !
     ```
    DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
    DB_NAME=postgres # имя базы данных
