@@ -1,18 +1,18 @@
-FROM python:3.7-slim
+FROM python:3.8.5
 
-WORKDIR /app
+WORKDIR /code
 
 COPY requirements.txt .
 
-RUN pip3 install -r requirements.txt --no-cache-dir
-
-COPY ./ .
+RUN apt-get -y update && apt-get -y upgrade && apt-get -y install nginx && apt-get -y install postgresql && apt-get install -y gunicorn && pip3 install -r ./requirements.txt
 
 RUN pip install psycopg2-binary
 
-RUN pip freeze > requirements.txt
+COPY . .
 
-CMD ["gunicorn", "api_yamdb.wsgi:application", "--bind", "0:8000" ]
+
+
+CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
 
 
 
