@@ -63,8 +63,8 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            sudo docker pull vedius/infra_sp2
-            cd yamdb_final
+            sudo docker stop $(sudo docker ps -a -q)
+            sudo docker-compose up --build -d
 
   send_message:
     runs-on: ubuntu-latest
