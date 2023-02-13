@@ -48,7 +48,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags:  vedius/yamdb_infra:latest
+          tags:  vedius/yamdb_inf:v0.0.1
 
   deploy:
     runs-on: ubuntu-latest
@@ -64,14 +64,14 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             ls -la
-            sudo docker pull vedius/yamdb_infra:latest
+            sudo docker pull vedius/yamdb_inf:v0.0.1 
             sudo docker-compose stop
             sudo docker-compose rm web
             sudo docker-compose up -d 
-            docker exec -i -t  vedius/infra_test:latest ls -la
-            sudo docker-compose exec -T web python manage.py migrate auth
-            sudo docker-compose exec -T web python3 manage.py migrate --run-syncdb
-            sudo docker-compose exec -T web python manage.py collectstatic --no-input
+            docker exec -i -t  vedius/yamdb_inf:v0.0.1  ls -la
+            sudo docker-compose exec -T vediusk_web_1 python manage.py migrate auth
+            sudo docker-compose exec -T vediusk_web_1 python3 manage.py migrate --run-syncdb
+            sudo docker-compose exec -T vediusk_web_1 python manage.py collectstatic --no-input
 
 
   send_message:
