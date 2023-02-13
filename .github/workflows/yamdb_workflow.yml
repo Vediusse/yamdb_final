@@ -64,6 +64,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           stack_file_name: ./docker-compose.yaml
           script: |
+            ls -la
             sudo docker pull vedius/infra_sp2:latest
             sudo docker-compose stop
             sudo docker-compose rm web
