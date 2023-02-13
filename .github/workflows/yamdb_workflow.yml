@@ -69,9 +69,9 @@ jobs:
             sudo docker-compose rm web
             sudo docker-compose up -d 
             docker exec -i -t  vedius/yamdb_inf:v0.0.1  ls -la
-            sudo docker-compose exec -T vediusk_web_1 python manage.py migrate auth
-            sudo docker-compose exec -T vediusk_web_1 python3 manage.py migrate --run-syncdb
-            sudo docker-compose exec -T vediusk_web_1 python manage.py collectstatic --no-input
+            sudo docker-compose exec -T web python manage.py migrate auth
+            sudo docker-compose exec -T web python3 manage.py migrate --run-syncdb
+            sudo docker-compose exec -T web python manage.py collectstatic --no-input
 
 
   send_message:
