@@ -74,7 +74,7 @@ cd api_yamdb
         EMAIL_PORT 
         EMAIL_USE_TLS = True/False
         EMAIL_USE_SSL = False/False
-        (можно получить на сайте сервиса электронной почты 
+        (можно получить на сайте сервиса электронной почт
 ИЛИ
     Заменить 
         EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
