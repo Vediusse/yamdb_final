@@ -9,7 +9,7 @@ services:
       - ../.env
 
   web:
-    image: vedius/infra_sp2:latest
+    image: vedius/yamdb_final:latest
     restart: always
     volumes:
       - static_value:/code/static/
