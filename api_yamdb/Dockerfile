@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+COPY requirements.txt .
+
 RUN pip install pip==20.3.4
 
 RUN pip3 install -r requirements.txt --no-cache-dir
