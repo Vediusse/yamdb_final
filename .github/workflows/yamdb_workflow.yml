@@ -52,7 +52,7 @@ jobs:
         with:
           push: true
           file: ./api_yamdb/Dockerfile
-          tags:  vedius/yamdb_inf:v0.0.1
+          tags:  vedius/yamdb_inf:latest
 
   deploy:
     runs-on: ubuntu-latest
