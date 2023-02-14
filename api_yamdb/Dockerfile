@@ -2,7 +2,7 @@ FROM python:3.7-slim
 
 WORKDIR /app
 
-COPY . .
+COPY api_yamdb .
 
 COPY ./api_yamdb/requirements.txt .
 
