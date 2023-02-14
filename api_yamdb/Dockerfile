@@ -5,7 +5,9 @@ WORKDIR /app
 
 COPY ./api_yamdb/ .
 
-RUN pip3 install -r requirements.txt --no-cache-dir
+COPY requirements.txt /tmp/requirements.txt
+
+RUN pip3 install -r /tmp/requirements.txt--no-cache-dir
 
 RUN pip3 install gunicorn && pip install psycopg2-binary
 
