@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN pip install pip==20.3.4
+
 RUN pip3 install -r requirements.txt --no-cache-dir
 
 RUN pip3 install gunicorn && pip install psycopg2-binary
