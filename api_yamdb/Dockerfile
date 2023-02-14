@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . .
 
-COPY requirements.txt .
+COPY ./api_yamdb/requirements.txt .
 
 RUN pip install pip==20.3.4
 
