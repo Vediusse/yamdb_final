@@ -2,11 +2,7 @@ FROM python:3.7-slim
 
 WORKDIR /app
 
-COPY api_yamdb .
-
-COPY ./api_yamdb/requirements.txt .
-
-RUN pip install pip==20.3.4
+COPY ./api_yamdb/ .
 
 RUN pip3 install -r requirements.txt --no-cache-dir
 
